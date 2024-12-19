@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الخدمات</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+    body{
+        display: grid;
+    grid-template-areas: 
+        "header header"
+        "nav nav"
+        "main main" 
+        "footer footer";
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto 3fr auto;
+    height: 100vh;
+    overflow: hidden
+    }
+    .haeder{
+        grid-area: header;
+    background-color: #630875;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    font-size: 32px;
+    }
+    .navbar{
+        grid-area: nav;
+    background-color: #8d0af8;
+    padding: 1em;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+
+    }
+    .navbar li{
+        margin: 0 10px;
+    }
+    .navbar a{
+        text-decoration: none;
+    color: #000;
+    padding: 5px 12px;
+    letter-spacing: 2px;
+    font-size: 18px;
+    }
+    .navbar a:hover{
+        background-color: #555;
+    border-bottom: 4px solid #000;
+    transition: 0.4s;
+    color: #f1f1f1;
+    box-shadow: 0 5px 15px rgba(9, 113, 121, 0.5);
+    }
+    main{
+        grid-area: main;
+    background-color: rgb(178, 192, 201);
+    background-image: url("./Images/3d-rendering-classic-interior.jpg");
+    background-position: center;
+    background-size: cover;
+    padding: 1em;
+    height: 100vh;
+    }
+    footer{
+        grid-area: footer;
+    background-color: #5f9bad;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    }
+
+</style>
+<body>
+    <header>
+        <h1>خدماتنا</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+   
+
+    <main>
+        <h2>ما نقدمه</h2>
+        <p>هذا هو المحتوى الخاص بصفحة الخدمات.</p>
+    </main>
+
+    <footer>
+        <p>حقوق الطبع والنشر &copy; 2023 جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

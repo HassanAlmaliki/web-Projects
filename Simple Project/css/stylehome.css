@@ -1,0 +1,231 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "nav nav"
+        "aside main" 
+        "footer footer";
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto 3fr auto;
+    height: 100vh;
+    overflow: hidden
+}
+header, nav , aside, main, footer {
+    display: none;
+}
+     /* إخفاء جميع العناصر */
+    
+
+header {
+    grid-area: header;
+    background-color: #630875;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    font-size: 32px;
+}
+
+
+
+nav {
+    grid-area: nav;
+    background-color: #8d0af8;
+    padding: 1em;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+    padding: 5px 12px;
+    letter-spacing: 2px;
+    font-size: 18px;
+   
+}
+
+.nav-links a:hover {
+    background-color: #555;
+    border-bottom: 4px solid #000;
+    transition: 0.4s;
+    color: #f1f1f1;
+    box-shadow: 0 5px 15px rgba(9, 113, 121, 0.5);
+}
+
+.menu-button {
+    display: none;
+    background-color: #672c75;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+aside {
+    grid-area: aside;
+    
+    background-image: url("./Images/library.jpg");
+    background-position: center;
+    background-size: cover;
+    padding: 1em;
+}
+
+
+main {
+    grid-area: main;
+    background-color: rgb(178, 192, 201);
+    background-image: url("./Images/3d-rendering-classic-interior.jpg");
+    background-position: center;
+    background-size: cover;
+    padding: 1em;
+    height: 100vh;
+}
+
+
+
+
+
+.Library{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,200px);
+    justify-content: center;
+    grid-gap: 10px;
+    max-width: 1000px;
+    width: 70%;
+    height: auto;
+    margin: 20px auto;
+    
+}
+
+.book {
+    background-color: #e7e7e7;
+    padding: 1em;
+    flex: 1; /* العناصر تأخذ نفس المساحة */
+    margin: 0 0.5em; /* مسافة بين العناصر */
+    display: inline;
+    text-align: center;
+    border-radius: 17px;
+}
+aside h3 {
+    margin-bottom: 1em;
+}
+
+button {
+    background-color: #672c75;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #4a1c5d;
+}
+
+.book-info {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    padding: 1em;
+    border-radius: 12px;
+}
+
+
+
+
+@media (max-width: 600px) {
+    body {
+        grid-template-areas: 
+            "header"
+            "nav"
+            "aside"
+            "main"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr  auto auto;
+    }
+    
+
+    .Library {
+        flex-direction: column; /* تغيير اتجاه العناصر في الشاشات الصغيرة */
+    }
+
+    .book {
+        margin: 0.5em 0; /* مسافة عمودية بين العناصر */
+    }
+    .nav-links {
+        display: none; /* إخفاء الروابط في الشاشات الصغيرة */
+        flex-direction: column;
+        position: absolute;
+        background-color: #847386;
+        width: 100%;
+        top: 50px; 
+        left: 0;
+        z-index: 1;
+    }
+
+    .menu-button {
+        display: block; /* إظهار الزر في الشاشات الصغيرة */
+    }
+
+    .nav-links.show {
+        display: flex; /* إظهار الروابط عند الضغط على الزر */
+    }
+  
+}
+footer {
+    grid-area: footer;
+    background-color: #5f9bad;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+span{
+    color: crimson;
+}
+
+.loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid rgb(9, 58, 114);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    z-index: 9999; 
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
